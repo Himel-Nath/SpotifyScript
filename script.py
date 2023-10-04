@@ -3,8 +3,9 @@ from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
 import os
 
-spotipy_client_id = "2a3ad103fcbb4e209b2ab646db90bc83"
-spotipy_client_secret = "ada1bf16b531442bb7ef3e11c17cca6d"
+load_dotenv()
+spotipy_client_id = os.environ.get("SPOTIPY_CLIENT_ID")
+spotipy_client_secret = os.environ.get("SPOTIPY_CLIENT_SECRET")
 
 with open("songs.txt", "r") as file:
     lines = file.readlines()
